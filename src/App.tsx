@@ -18,7 +18,9 @@ const getCategorie: GetCategory = (categoryId) => {
 
 type GetUser = (userId: number) => User | null;
 const getUser: GetUser = (userId) => {
-  return usersFromServer.find((user) => user.id === userId) || null;
+  const foundedUser = usersFromServer.find((user) => user.id === userId);
+
+  return foundedUser || null;
 };
 
 const productsWithUsersAndCategories = productsFromServer.map((product) => ({
